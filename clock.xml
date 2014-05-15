@@ -1,0 +1,23 @@
+<project name="antsimple" default="dist" basedir=".">
+
+	<target name="dist" description="generate the distribution">
+
+		<jar jarfile="MandelClock.jar">
+			<zipgroupfileset dir="libs" />
+			<manifest>
+				<attribute name="Main-Class" value="mandel.clock.ClockFrame" />
+			</manifest>
+
+			<fileset dir="./bin">
+				<include name="mandel/clock/*.class" />
+			</fileset>
+
+			<fileset dir="test">
+				<include name="**/*" />
+			</fileset>
+
+		</jar>
+
+	</target>
+
+</project>

@@ -1,0 +1,21 @@
+<project default = "dist-src">
+
+	<target name="dist-src">
+
+		<!--<delete file = "mandel.zip" />-->
+		
+		<zip file = "mandel.zip">
+			
+			<fileset dir = "src">
+				<include name = "**/*" />
+				</fileset>
+				
+			<fileset dir = "test">
+				<include name = "**/*" />
+				</fileset>
+			
+		</zip>
+		
+	</target>
+
+</project>

@@ -1,0 +1,23 @@
+<project name="antsimple" default="dist" basedir=".">
+
+	<target name="dist" description="generate the distribution">
+
+		<jar jarfile="MandelWeatherMap.jar">
+			<zipgroupfileset dir="libs" includes="**/*.jar" />
+			<manifest>
+				<attribute name="Main-Class" value="mandel.weather.Frame" />
+			</manifest>
+
+			<fileset dir="./bin">
+				<include name="mandel/weather/*.class" />
+			</fileset>
+
+			<fileset dir="test">
+				<include name="**/*" />
+			</fileset>
+
+		</jar>
+
+	</target>
+
+</project>
