@@ -1,0 +1,19 @@
+<project name="antsimple" default="dist" basedir=".">
+
+	<target name="dist" description="generate the distribution">
+
+		<jar jarfile="MandelEarthquakes.jar">
+			<zipgroupfileset dir="libs" includes="**/*.jar" />
+			<manifest>
+				<attribute name="Main-Class" value="mandel.earthquakes.ShowEarthquakes" />
+			</manifest>
+
+			<fileset dir="./bin">
+				<include name="mandel/earthquakes/*.class" />
+			</fileset>
+			
+		</jar>
+
+	</target>
+
+</project>
