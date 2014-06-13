@@ -8,9 +8,6 @@ import au.com.bytecode.opencsv.CSVReader;
 
 public class ZipCodes extends ArrayList<ZipCode> {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2000452738345769767L;
 
 	public ZipCodes(String fileName) throws IOException {

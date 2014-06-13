@@ -23,6 +23,7 @@ public class WeatherConditions extends Thread {
 
 	@Override
 	public void run() {
+
 		Gson gson = new Gson();
 		String urlString = "http://api.openweathermap.org/data/2.5/forecast?q="
 				+ location.trim() + "&mode=json";
@@ -40,9 +41,9 @@ public class WeatherConditions extends Thread {
 			e.printStackTrace();
 		}
 	}
-
-	public Conditions getCond() {
-		return cond;
-	}
+	//
+	// public Conditions getCond() {
+	// return cond;
+	// }
 
 }

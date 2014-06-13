@@ -1,6 +1,5 @@
 package mandel.ticTacToeBoard;
 
-
 public class Location {
 
 	private int x;

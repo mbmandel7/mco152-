@@ -1,12 +1,12 @@
 package mandel.flicker;
 
 import java.awt.BorderLayout;
-import java.awt.Scrollbar;
 import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 public class FlickerFeedFrame extends JFrame {
 
@@ -16,20 +16,18 @@ public class FlickerFeedFrame extends JFrame {
 
 	public FlickerFeedFrame() throws IOException {
 		this.setTitle("Flicker");
-		// this.setLocationRelativeTo(null);
-		this.setSize(800, 200);
+		this.setSize(800, 300);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-		// setVisible(true);
+
 		JPanel panel = new JPanel();
-		add(panel, BorderLayout.CENTER);
 
 		for (int i = 0; i < labels.length; i++) {
 			labels[i] = new JLabel();
 			panel.add(labels[i]);
 		}
 
-		Scrollbar scroll = new Scrollbar(Scrollbar.HORIZONTAL);
-		add(scroll, BorderLayout.SOUTH);
+		JScrollPane scroll = new JScrollPane(panel);
+		add(scroll, BorderLayout.CENTER);// used to be panel instead of scroll
 
 		Thread downloadFeedThread = new DownloadFlickerFeedThread(this);
 		downloadFeedThread.start();

@@ -7,19 +7,19 @@ public class DictionaryTest {
 
 	@Test
 	public void testExists() throws Exception {
-		Dictionary dictionary = new Dictionary();
+		Dict dictionary = new Dict();
 		Assert.assertTrue(dictionary.exists("DONG"));
 	}
 
 	@Test
 	public void testDoesNotExist() throws Exception {
-		Dictionary dictionary = new Dictionary();
+		Dict dictionary = new Dict();
 		Assert.assertFalse(dictionary.exists("jjjjjj"));
 	}
 
 	@Test
 	public void testMixedCase() throws Exception {
-		Dictionary dictionary = new Dictionary();
+		Dict dictionary = new Dict();
 		Assert.assertTrue(dictionary.exists("Aa"));
 	}
 }

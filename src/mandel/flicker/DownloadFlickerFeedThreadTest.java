@@ -16,8 +16,7 @@ public class DownloadFlickerFeedThreadTest {
 		// the constructor
 
 		FlickerFeedFrame frame = Mockito.mock(FlickerFeedFrame.class);
-		DownloadFlickerFeedThread thread = new DownloadFlickerFeedThread(
-				(frame));
+		DownloadFlickerFeedThread thread = new DownloadFlickerFeedThread(frame);
 
 		Mockito.verify(frame, Mockito.never()).loadImages(
 				Mockito.any(FlickerFeed.class));
@@ -32,6 +31,6 @@ public class DownloadFlickerFeedThreadTest {
 												// underlined because it was
 												// created in the thread. how do
 												// i get around this?
-
+												// Mockito.any()
 	}
 }

@@ -2,18 +2,14 @@
 
 	<target name="dist" description="generate the distribution">
 
-		<jar jarfile="MandelClock.jar">
+		<jar jarfile="MandelNasa.jar">
 			<zipgroupfileset dir="libs" />
 			<manifest>
-				<attribute name="Main-Class" value="mandel.clock.ClockFrame" />
+				<attribute name="Main-Class" value="mandel.nasa.Main" />
 			</manifest>
 
 			<fileset dir="./bin">
-				<include name="mandel/clock/*.class" />
-			</fileset>
-
-			<fileset dir="test">
-				<include name="**/*" />
+				<include name="mandel/nasa/*.class" />
 			</fileset>
 
 		</jar>

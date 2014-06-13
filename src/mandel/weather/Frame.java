@@ -19,7 +19,7 @@ public class Frame extends JFrame {
 
 		GraphComponent graph = new GraphComponent();
 
-		add(new SelectCityPanel(this, graph), BorderLayout.NORTH);
+		add(new SelectCityPanel(graph), BorderLayout.NORTH);
 		add(graph, BorderLayout.CENTER);
 	}
 

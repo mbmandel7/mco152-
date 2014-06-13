@@ -23,28 +23,28 @@ public class ShapesTest {
 	public void testGetMinLatitude() throws IOException {
 		Shapes s = new Shapes();
 		double actual = s.getMinLatitude();
-		Assert.assertEquals(40.512764, actual, 0);
+		Assert.assertEquals(40.512764, actual, .1);
 	}
 
 	@Test
 	public void testGetMaxLatitude() throws IOException {
 		Shapes s = new Shapes();
 		double actual = s.getMaxLatitude();
-		Assert.assertEquals(40.903125, actual, 0);
+		Assert.assertEquals(40.903125, actual, .1);
 	}
 
 	@Test
 	public void testGetMinLongitude() throws IOException {
 		Shapes s = new Shapes();
 		double actual = s.getMinLongitude();
-		Assert.assertEquals(-74.251961, actual, 0);
+		Assert.assertEquals(-74.251961, actual, .1);
 	}
 
 	@Test
 	public void testGetMaxLongitude() throws IOException {
 		Shapes s = new Shapes();
 		double actual = s.getMaxLongitude();
-		Assert.assertEquals(-73.755405, actual, 0);
+		Assert.assertEquals(-73.755405, actual, .1);
 	}
 
 }

@@ -27,16 +27,15 @@ public class ClockComponent extends JComponent {
 		g.drawString("9", 20, yCenter);
 
 		GregorianCalendar time = new GregorianCalendar();
-		drawHour(xCenter, yCenter, radiusLength, time, g);
-		drawMinute(xCenter, yCenter, radiusLength, time, g);
-		drawSecond(xCenter, yCenter, radiusLength, time, g);
+		drawHour(xCenter, yCenter, radiusLength, time.get(Calendar.HOUR), g);
+		drawMinute(xCenter, yCenter, radiusLength, time.get(Calendar.MINUTE), g);
+		drawSecond(xCenter, yCenter, radiusLength, time.get(Calendar.SECOND), g);
 
 	}
 
-	public void drawHour(int xCenter, int yCenter, int radiusLength,
-			GregorianCalendar time, Graphics g) {
+	public void drawHour(int xCenter, int yCenter, int radiusLength, int hour,
+			Graphics g) {
 		g.setColor(Color.WHITE);
-		int hour = time.get(Calendar.HOUR);
 		double hourAngle = 2 * Math.PI * hour / 12;
 		hourAngle -= (Math.PI / 2);
 		double hourX = Math.cos(hourAngle);
@@ -47,9 +46,9 @@ public class ClockComponent extends JComponent {
 	}
 
 	public void drawMinute(int xCenter, int yCenter, int radiusLength,
-			GregorianCalendar time, Graphics g) {
+			int minute, Graphics g) {
 		g.setColor(Color.DARK_GRAY);
-		double minuteAngle = 2 * Math.PI * time.get(Calendar.MINUTE) / 60;
+		double minuteAngle = 2 * Math.PI * minute / 60;
 		minuteAngle -= (Math.PI / 2);
 		double minuteX = Math.cos(minuteAngle);
 		minuteX = xCenter + minuteX * radiusLength * .4;
@@ -59,9 +58,9 @@ public class ClockComponent extends JComponent {
 	}
 
 	public void drawSecond(int xCenter, int yCenter, int radiusLength,
-			GregorianCalendar time, Graphics g) {
+			int second, Graphics g) {
 		g.setColor(Color.RED);
-		double secondAngle = 2 * Math.PI * time.get(Calendar.SECOND) / 60;
+		double secondAngle = 2 * Math.PI * second / 60;
 		secondAngle -= (Math.PI / 2);
 		double secondX = Math.cos(secondAngle);
 		secondX = xCenter + secondX * radiusLength * .5;

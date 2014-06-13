@@ -72,27 +72,10 @@ public class AmexData {
 
 	public boolean contains(String symbol) {
 		return stockData.containsKey(symbol);
-		// for (DailyPrice dt : stockData) {
-		// if (symbol.equals(dt.getSymbol())) {
-		// return true;
-		// }
-		// }
-		// return false;
 	}
 
 	public List<DailyPrice> getPrices(String symbol) {
 		return stockData.get(symbol);
-
-		// List<DailyPrice> stockDataList = new ArrayList<DailyPrice>();
-		// for (DailyPrice dt : stockData) {
-		// if (symbol.equals(dt.getSymbol())) {
-		// stockDataList.add(dt);
-		// }
-		// }
-		// if (!stockDataList.isEmpty()) {
-		// Collections.sort(stockData, new DateComparator());
-		// }
-		// return stockDataList;
 	}
 
 	public List<DailyPrice> getPrices(String symbol, Date startDate,
@@ -109,27 +92,6 @@ public class AmexData {
 		}
 		Collections.sort(newList, new DateComparator());
 		return newList;
-
-		// List<DailyPrice> stockDataList = getPrices(symbol);
-		// for (DailyPrice dp : stockDataList) {
-		// Date date = dp.getDate();
-		// if (startDate.after(date) || endDate.before(date)) {
-		// stockDataList.remove(dp);
-		// }
-		// }
-		//
-		// List<DailyPrice> stockDataList = new ArrayList<DailyPrice>();
-		// for (DailyPrice dt : stockData) {
-		// Date date = dt.getDate();
-		// if (symbol.equals(dt.getSymbol()) && !startDate.after(date)
-		// && !endDate.before(date)) {
-		// stockDataList.add(dt);
-		// }
-		// }
-		// if (!stockDataList.isEmpty()) {
-		// Collections.sort(stockDataList, new DateComparator());
-		// }
-		// return stockDataList;
 	}
 
 	class DateComparator implements Comparator<DailyPrice> {

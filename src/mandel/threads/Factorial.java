@@ -10,7 +10,7 @@ public class Factorial extends Thread {
 		this.n = num;
 	}
 
-	public BigInteger fact(long n) {
+	public BigInteger fact() {
 		BigInteger total = BigInteger.valueOf(n);
 		for (long i = n - 1; i > 0; i--) {
 			total = total.multiply(BigInteger.valueOf(i));
@@ -20,6 +20,6 @@ public class Factorial extends Thread {
 
 	@Override
 	public void run() {
-		System.out.println(fact(n));
+		System.out.println(fact());
 	}
 }

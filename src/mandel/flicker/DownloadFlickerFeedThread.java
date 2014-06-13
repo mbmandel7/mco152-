@@ -23,9 +23,7 @@ public class DownloadFlickerFeedThread extends Thread {
 	// download the flicker feed as a flickerfeed object
 	public DownloadFlickerFeedThread(final FlickerFeedFrame frame)
 			throws IOException {
-
 		this.frame = frame;
-
 	}
 
 	@Override

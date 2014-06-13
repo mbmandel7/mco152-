@@ -21,7 +21,6 @@ public class DownloadImageThread extends Thread {
 	public DownloadImageThread(final JLabel label, final String url) {
 		this.label = label;
 		this.url = url;
-
 	}
 
 	@Override

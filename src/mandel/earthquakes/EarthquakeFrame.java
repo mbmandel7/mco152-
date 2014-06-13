@@ -9,8 +9,9 @@ public class EarthquakeFrame extends JFrame {
 
 	public EarthquakeFrame() throws InterruptedException {
 		setTitle("Earthquake");
+		setSize(350, 600);
 
-		list = new JList();
+		list = new JList<EarthquakeObject>();
 
 		list.setCellRenderer(new CellRenderer());
 
@@ -21,11 +22,4 @@ public class EarthquakeFrame extends JFrame {
 	public JList<EarthquakeObject> getList() {
 		return list;
 	}
-
-	public void updateList() throws InterruptedException {
-		DownloadDataFeed download = new DownloadDataFeed(list);
-		download.start();
-		download.sleep(60000);
-	}
-
 }

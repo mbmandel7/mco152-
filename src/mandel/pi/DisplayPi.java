@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextArea;
 
+import mandel.threads.PiCalcThread;
+
 public class DisplayPi extends JFrame implements ActionListener, Runnable {
 
 	/**
@@ -48,7 +50,9 @@ public class DisplayPi extends JFrame implements ActionListener, Runnable {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Thread t = new Thread(this);
+		// both of the following statements work:
+		// Thread t = new Thread(this);
+		Thread t = new PiCalcThread(area);
 		t.start();
 	}
 

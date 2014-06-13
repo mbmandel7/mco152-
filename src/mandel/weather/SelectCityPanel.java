@@ -18,7 +18,7 @@ public class SelectCityPanel extends JPanel implements ActionListener {
 
 	private GraphComponent graph;
 
-	public SelectCityPanel(Frame frame, GraphComponent graph) {
+	public SelectCityPanel(GraphComponent graph) {
 
 		enterCityLabel = new JLabel(
 				"Enter the name of a city and state/country");
@@ -30,21 +30,22 @@ public class SelectCityPanel extends JPanel implements ActionListener {
 		select = new JButton("Select");
 		add(select);
 
-		select.addActionListener(this);
-
 		this.graph = graph;
+
+		select.addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String location = enterCity.getText();
-		try {
-			WeatherConditions wc = new WeatherConditions(location, graph);
-			wc.start();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		if (location != null) {
+			try {
+				WeatherConditions wc = new WeatherConditions(location, graph);
+				wc.start();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
 	}
-
 }

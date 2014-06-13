@@ -7,10 +7,6 @@ public class FlickerFeed {
 
 	private Picture[] items;
 
-	public Picture[] getItems() {
-		return items;
-	}
-
 	public String[] getArrayM() {
 		String[] urls = new String[20];
 		for (int i = 0; i < items.length; i++) {

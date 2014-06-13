@@ -64,28 +64,7 @@ public class ListSightings {
 		// System.out.println(s);
 		// }
 		// }
-		//
-		// // print zip, lat, long for every sighting
-		// ZipCodes zips = new ZipCodes("./ZIP_CODES.txt");
-		//
-		// for (Sighting s : list) {
-		//
-		// String location = s.getLocation().trim();
-		// if (',' != location.charAt(location.length() - 1)) {
-		// String city = location.substring(0, location.indexOf(','))
-		// .toUpperCase();
-		// String state = location.substring(location.indexOf(',') + 2)
-		// .toUpperCase();
-		// for (ZipCode z : zips) {
-		// if (city.equals(z.getCity()) && state.equals(z.getState())) {
-		// s.setZip(z.getZip());
-		// System.out.println("zip: " + s.getZip() + " latitude: "
-		// + z.getLatitude() + " longitude: "
-		// + z.getLongitude());
-		// break;
-		// }
-		// }
-		// }
-		// }
+
+		// print zip, lat, long for every sighting
 	}
 }
